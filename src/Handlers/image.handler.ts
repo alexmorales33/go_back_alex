@@ -3,7 +3,7 @@ import { addTextToImage } from '../Controllers/image.controller';
 
 export const addTextToImageHandler = async (req: Request, res: Response) => {
   try {
-    const { text } = req.body as { text: string };
+    const text = req.query.text as string;
     if (!text) {
         return res.status(400).json({ message: "Text parameter is required." });
     }
